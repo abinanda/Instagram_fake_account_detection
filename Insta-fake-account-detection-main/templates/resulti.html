@@ -1,0 +1,66 @@
+<html>
+	<head>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/insta.css') }}"> 
+	   <title>Prediction</title>
+	</head>
+
+
+<body>
+    <h1>REAL OR FAKE ???</h1>
+    <div class="login center">
+       
+        <br>
+        <form action="{{ url_for('insta')}}" method="POST">
+
+            <h4>Is Profile picture present or not:</h4>
+            <input type="text" name="profile pic" placeholder="Yes:1 No:0" required="required"/>
+   
+
+            <h4>Enter Username length </h4>
+            <input type="text" name="nums/length username" placeholder="nums/length username" required="required"/>
+            
+
+	    <h4>Enter No.of Words in Full name </h4>
+            <input type="text" name="fullname words" placeholder="fullname words" required="required"/>
+            
+
+	    <h4>Enter Full Name Length</h4>
+            <input type="text" name="nums/length fullname" placeholder="nums/length fullname" required="required"/>
+            
+
+	    <h4>Does account name and username are equal: </h4>
+            <input type="text" name="name==username" placeholder="Yes:1 No:0" required="required"/>
+            
+
+	    <h4>Enter Length of account description:</h4>
+            <input type="text" name="description length" placeholder="description length" required="required"/>
+            
+
+	    <h4>Is any external URL present in bio:</h4>
+            <input type="text" name="external URL" placeholder="Yes:1 No:0" required="required"/>
+            
+
+	    <h4>account is private or not: </h4>
+            <input type="text" name="private" placeholder="Yes:1 No:0" required="required"/>
+
+
+	    <h4>Enter No. of Posts: </h4>
+            <input type="text" name="#posts" placeholder="posts" required="required"/>
+
+	    <h4>No. of Followers: </h4>
+            <input type="text" name="#followers" placeholder="followers" required="required"/>
+
+	    <h4>No. of Follows: </h4>
+            <input type="text" name="#follows" placeholder="follows" required="required"/>
+
+
+
+            
+
+            <button type="submit" class="btn btn-primary btn-block btn-large"> SUBMIT </button>
+        </form>
+        <br>
+        {{ prediction_text }}
+    </div>
+</body>
+</html>
